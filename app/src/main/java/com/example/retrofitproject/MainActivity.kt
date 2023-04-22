@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initview() {
-
 //        val conMgr = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 //        val netInfo = conMgr.activeNetworkInfo
 //        if (netInfo == null) {
@@ -47,7 +46,6 @@ class MainActivity : AppCompatActivity() {
 //            dialog = ProgressDialog.show(this@WelcomePage, "", "Loading...", true, false)
 //            Welcome_Page().execute()
 //        }
-
         apiInterface = APIClient.getclient().create(APIInterface::class.java)
         apiInterface.getAllproducts().enqueue(object : retrofit2.Callback<ProductModelClass<Any?>> {
             override fun onResponse(
