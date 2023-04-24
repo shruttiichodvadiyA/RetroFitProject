@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.example.retrofitproject.R
 import java.util.Objects
 import kotlin.collections.ArrayList
 

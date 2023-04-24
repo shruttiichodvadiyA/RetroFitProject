@@ -49,7 +49,7 @@ class ItemDisplayActivity : AppCompatActivity() {
                 binding.txtcategory.text=category
                 binding.txtstock.text=stock.toString()
 
-                var adapter=ImageAdapter(this@ItemDisplayActivity,images)
+                var adapter= ImageAdapter(this@ItemDisplayActivity,images)
                 binding.viewpager.adapter=adapter
 
             }

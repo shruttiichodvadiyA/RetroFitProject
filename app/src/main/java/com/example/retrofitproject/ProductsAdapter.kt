@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ProductsAdapter(var context: Context,var  productlist: ArrayList<ProductsItem>?,var invoke:((ProductsItem)->Unit)) : RecyclerView.Adapter<ProductsAdapter.myadapter>() {
+class ProductsAdapter(var context: Context, var  productlist: ArrayList<ProductsItem>?, var invoke:((ProductsItem)->Unit)) : RecyclerView.Adapter<ProductsAdapter.myadapter>() {
 
     class myadapter(v: View) : RecyclerView.ViewHolder(v) {
         var txtid: TextView = v.findViewById(R.id.txtid)
