@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                             startActivity(i)
                         }
                         Log.e("TAG", "onResponse: " + productlist?.size)
-                        var manager = LinearLayoutManager(this@MainActivity)
+                        var manager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
                         binding.rcvproducts.layoutManager = manager
                         binding.rcvproducts.adapter = adapter
                     }
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 ) {
                     var searchlist=response.body()?.products
                     var adapter= SearchAdapter(this@MainActivity,searchlist)
-                    var manager=LinearLayoutManager(this@MainActivity)
+                    var manager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
                     binding.rcvsearch.layoutManager=manager
                     binding.rcvsearch.adapter=adapter
                 }

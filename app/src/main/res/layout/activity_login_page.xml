@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".LoginPage_Activity">
 
     <com.google.android.material.textfield.TextInputLayout
@@ -24,13 +24,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        app:counterMaxLength="10"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_20sdp"
         android:layout_marginVertical="@dimen/_10sdp"
         android:background="@color/white"
+        app:counterMaxLength="10"
         app:endIconMode="password_toggle">
 
         <EditText
@@ -42,12 +42,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnlogin"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:paddingHorizontal="@dimen/_20sdp"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_15ssp"
-        android:text="Login"
-        android:background="@drawable/ratingbg"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/ratingbg"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_15ssp" />
 </LinearLayout>

@@ -24,13 +24,14 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-            android:textColor="#808080"
-            android:text="Username"
-            android:layout_marginHorizontal="@dimen/_10sdp"
-            android:padding="@dimen/_10sdp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:padding="@dimen/_10sdp"
+                android:text="Username"
+                android:textColor="#808080" />
 
             <TextView
                 android:textSize="@dimen/_15ssp"
@@ -171,4 +172,11 @@
         </LinearLayout>
 
     </LinearLayout>
+    <Button
+        android:text="LogOut"
+        android:id="@+id/btnlogout"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
