@@ -2,6 +2,7 @@ package com.example.retrofitproject
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,21 @@ class MainActivity : AppCompatActivity() {
 
         initview()
         search()
+        logout()
+    }
+
+    private fun logout() {
+        binding.btnlogout.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE)
+            val myEdit: SharedPreferences.Editor = sharedPreferences.edit()
+            myEdit.remove("isLogin")
+            myEdit.commit()
+
+            var i = Intent(this, LoginPage_Activity::class.java)
+            startActivity(i)
+            finish()
+
+        }
     }
 
 

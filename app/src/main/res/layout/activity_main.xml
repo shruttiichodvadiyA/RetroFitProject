@@ -2,34 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <EditText
-        android:padding="@dimen/_10sdp"
-        android:hint="Search here"
-        android:id="@+id/edtsearch"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@drawable/productsbg"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edtsearch"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/productsbg"
+            android:hint="Search here"
+            android:padding="@dimen/_10sdp" />
+
         <Button
             android:id="@+id/btnsearch"
-            android:layout_gravity="center"
-            android:text="Search"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Search" />
     </LinearLayout>
+
+    <Button
+        android:text="logout"
+        android:id="@+id/btnlogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvsearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvproducts"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </LinearLayout>

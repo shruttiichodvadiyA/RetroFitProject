@@ -23,11 +23,11 @@ class LoginDataShowActivity : AppCompatActivity() {
     private fun logout() {
         binding.btnlogout.setOnClickListener {
             val sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE)
-            val myEdit : SharedPreferences.Editor= sharedPreferences.edit()
+            val myEdit: SharedPreferences.Editor = sharedPreferences.edit()
             myEdit.remove("isLogin")
             myEdit.commit()
 
-            var i = Intent(this,LoginPage_Activity::class.java)
+            var i = Intent(this, LoginPage_Activity::class.java)
             startActivity(i)
             finish()
 
@@ -36,26 +36,16 @@ class LoginDataShowActivity : AppCompatActivity() {
 
     private fun initview() {
         val sharedPreferences = getSharedPreferences("MySharedPref", MODE_PRIVATE)
-//        val myEdit :SharedPreferences.Editor= sharedPreferences.edit()
 
-//        var username=sharedPreferences.getString("username","")
+        var image = sharedPreferences.getString("image", " ")
 
-//        var username = intent.getStringExtra("username")
-//        var id=intent.getIntExtra("id")
-//        var email = intent.getStringExtra("email")
-//        var firstName = intent.getStringExtra("firstName")
-//        var lastName = intent.getStringExtra("lastName")
-//        var gender = intent.getStringExtra("gender")
-//        var image = intent.getStringExtra("image")
-//        var token = intent.getStringExtra("token")
-
-        var image=sharedPreferences.getString("image"," ")
-        Glide.with(this).load("$image").placeholder(R.drawable.placeholderimg).into(binding.imageview)
-        binding.txtusername.text = sharedPreferences.getString("username"," ")
-        binding.txtemail.text = sharedPreferences.getString("email"," ")
-        binding.txtfirstname.text = sharedPreferences.getString("firstName"," ")
-        binding.txtlastname.text = sharedPreferences.getString("lastName"," ")
-        binding.txtgender.text = sharedPreferences.getString("gender"," ")
+        Glide.with(this).load("$image").placeholder(R.drawable.placeholderimg)
+            .into(binding.imageview)
+        binding.txtusername.text = sharedPreferences.getString("username", " ")
+        binding.txtemail.text = sharedPreferences.getString("email", " ")
+        binding.txtfirstname.text = sharedPreferences.getString("firstName", " ")
+        binding.txtlastname.text = sharedPreferences.getString("lastName", " ")
+        binding.txtgender.text = sharedPreferences.getString("gender", " ")
 
 
     }
