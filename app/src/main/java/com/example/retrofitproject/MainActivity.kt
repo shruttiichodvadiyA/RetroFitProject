@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun initview() {
 
-        val ConnectManager=getSystemService(Context.CONNECTIVITY_SERVICE)  as ConnectivityManager
-        val networkInfo=ConnectManager.activeNetworkInfo
+        val ConnectManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = ConnectManager.activeNetworkInfo
 
         if (networkInfo != null && networkInfo.isConnected) {
 
@@ -70,7 +70,11 @@ class MainActivity : AppCompatActivity() {
                             startActivity(i)
                         }
                         Log.e("TAG", "onResponse: " + productlist?.size)
-                        var manager = LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
+                        var manager = LinearLayoutManager(
+                            this@MainActivity,
+                            LinearLayoutManager.VERTICAL,
+                            false
+                        )
                         binding.rcvproducts.layoutManager = manager
                         binding.rcvproducts.adapter = adapter
                     }
@@ -79,27 +83,28 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 })
-        }
-       else{
+        } else {
             Toast.makeText(this, "Network isn't available", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun search() {
         binding.btnsearch.setOnClickListener {
-            var SearchText=binding.edtsearch.text.toString()
+            var SearchText = binding.edtsearch.text.toString()
             apiInterface.getSearchItem(SearchText).enqueue(object :
                 Callback<ProductModelClass<ProductsItem>> {
                 override fun onResponse(
                     call: Call<ProductModelClass<ProductsItem>>,
                     response: Response<ProductModelClass<ProductsItem>>
                 ) {
-                    var searchlist=response.body()?.products
-                    var adapter= SearchAdapter(this@MainActivity,searchlist)
-                    var manager=LinearLayoutManager(this@MainActivity,LinearLayoutManager.VERTICAL,false)
-                    binding.rcvsearch.layoutManager=manager
-                    binding.rcvsearch.adapter=adapter
+                    var searchlist = response.body()?.products
+                    var adapter = SearchAdapter(this@MainActivity, searchlist)
+                    var manager =
+                        LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
+                    binding.rcvsearch.layoutManager = manager
+                    binding.rcvsearch.adapter = adapter
                 }
+
                 override fun onFailure(call: Call<ProductModelClass<ProductsItem>>, t: Throwable) {
                     TODO("Not yet implemented")
                 }
